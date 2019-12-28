@@ -15,6 +15,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' => $name,
         'slug' => $slug,
         'description' => $faker->text(),
+        'featured_image' => 'assets/images/products/speaker-1.jpg',
         'quantity' => $faker->numberBetween(1, 50),
         'active' => 1,
         'price' => $faker->randomFloat(2, 10, 5000),
