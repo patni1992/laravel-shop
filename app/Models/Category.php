@@ -11,6 +11,8 @@ class Category extends Model
     use Sluggable;
 
     protected $table = 'categories';
+    
+    protected $fillable = ['name'];
 
     public function getRouteKeyName()
     {
