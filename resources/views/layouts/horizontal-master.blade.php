@@ -23,13 +23,13 @@
     </div>
 
     <div class="app-admin-wrap layout-horizontal-bar clearfix">
-        @include('layouts.header-menu')
-        @include('layouts.horizontal-bar')
+        @include('includes.header-menu')
+        @include('includes.horizontal-bar')
         <div class="main-content-wrap  d-flex flex-column">
             <div class="main-content">
                 @yield('main-content')
             </div>
-            @include('layouts.footer')
+            @include('includes.footer')
         </div>
     </div>
     {{-- common js --}}

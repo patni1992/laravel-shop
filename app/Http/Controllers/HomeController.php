@@ -9,6 +9,6 @@ class HomeController extends Controller
     public function index()
     {
         $products =  Product::paginate(9);
-        return view('starter', ['products' => $products]);
+        return view('pages.home', ['products' => $products]);
     }
 }

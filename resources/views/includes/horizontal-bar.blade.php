@@ -4,7 +4,7 @@
             <div class=" topnav rtl-ps-none" id="" data-perfect-scrollbar data-suppress-scroll-x="true">
                 <ul class="menu float-left">
                     <li>
-                        @include('categories', ['categories' => $categories])
+                        @include('includes.categories', ['categories' => $categories])
                     </li>
                 </ul>
             </div>

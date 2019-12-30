@@ -123,6 +123,6 @@
             </div>
         </div>
     </div>
-    @include('layouts.search')
+    @include('includes.search')
 </div>
 <!-- header top menu end -->

@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('layouts.horizontal-bar', function ($view) {
+        view()->composer('includes.horizontal-bar', function ($view) {
             $view->with('categories', Category::getAllParentsWithChildren());
         });
     }

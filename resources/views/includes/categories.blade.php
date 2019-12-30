@@ -6,7 +6,7 @@
         <input type="checkbox" class="toggle">
         <ul>
             @foreach ($category->childrenCategories as $childCategory)
-            @include('child_category', ['child_category' => $childCategory])
+            @include('includes.child_category', ['child_category' => $childCategory])
             @endforeach
         </ul>
     </div>
