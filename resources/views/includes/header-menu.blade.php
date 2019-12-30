@@ -1,6 +1,6 @@
 <div class="main-header">
-    <div class="logo">
-        <img src="{{asset('assets/images/logo.png')}}" alt="">
+    <div class="mx-4">
+        <h1>Laravel Shop</h1>
     </div>
 
     <div class="menu-toggle">
@@ -20,9 +20,9 @@
 
     <div class="header-part-right">
         <!-- Full screen toggle -->
-        <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i>
+        <!-- <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i> -->
         <!-- Grid menu Dropdown -->
-        <div class="dropdown widget_dropdown">
+        <!-- <div class="dropdown widget_dropdown">
             <i class="i-Safe-Box text-muted header-icon" role="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"></i>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -35,15 +35,15 @@
                     <a href="#"><i class="i-Ambulance"></i> Support</a>
                 </div>
             </div>
-        </div>
-        <!-- Notificaiton -->
+        </div> -->
+<!--        
         <div class="dropdown">
             <div class="badge-top-container" role="button" id="dropdownNotification" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <span class="badge badge-primary">3</span>
                 <i class="i-Bell text-muted header-icon"></i>
             </div>
-            <!-- Notification dropdown -->
+           
             <div class="dropdown-menu dropdown-menu-right notification-dropdown rtl-ps-none"
                 aria-labelledby="dropdownNotification" data-perfect-scrollbar data-suppress-scroll-x="true">
                 <div class="dropdown-item d-flex">
@@ -103,11 +103,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Notificaiton End -->
 
-        <!-- User avatar dropdown -->
-        <div class="dropdown">
+       
+        <!-- <div class="dropdown">
             <div class="user col align-self-end">
                 <img src="{{asset('assets/images/faces/1.jpg')}}" id="userDropdown" alt="" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -121,7 +121,7 @@
                     <a class="dropdown-item" href="#">Sign out</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     @include('includes.search')
 </div>

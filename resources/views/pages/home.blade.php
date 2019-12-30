@@ -2,10 +2,6 @@
 @section('main-content')
 <div class="breadcrumb">
     <h1>Products</h1>
-    <ul>
-        <li><a href="">Apps</a></li>
-        <li>Ecommerce</li>
-    </ul>
 </div>
 <div class="separator-breadcrumb border-top"></div>
 <section class="product-cart">
