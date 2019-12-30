@@ -7,13 +7,8 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(Product::class, function (Faker $faker) {
-
-    $name = $faker->sentence;
-    $slug = Str::slug($name, '-');
-
     return [
-        'name' => $name,
-        'slug' => $slug,
+        'name' => $faker->sentence,
         'description' => $faker->text(),
         'featured_image' => 'assets/images/products/speaker-1.jpg',
         'quantity' => $faker->numberBetween(1, 50),
@@ -22,3 +17,4 @@ $factory->define(Product::class, function (Faker $faker) {
         'weight' => $faker->randomFloat(2, 10, 1000)
     ];
 });
+
