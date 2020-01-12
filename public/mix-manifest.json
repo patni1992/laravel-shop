@@ -1,8 +1,7 @@
 {
+    "/assets/js/app.js": "/assets/js/app.js",
     "/assets/js/script.js": "/assets/js/script.js",
     "/css/app.css": "/css/app.css",
     "/assets/styles/css/themes/lite-purple.min.css": "/assets/styles/css/themes/lite-purple.min.css",
-    "/assets/styles/css/themes/lite-blue.min.css": "/assets/styles/css/themes/lite-blue.min.css",
-    "/assets/styles/css/themes/dark-purple.min.css": "/assets/styles/css/themes/dark-purple.min.css",
     "/assets/js/common-bundle-script.js": "/assets/js/common-bundle-script.js"
 }

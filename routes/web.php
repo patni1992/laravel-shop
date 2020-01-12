@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/categories/{category}', 'CategoryController@show');

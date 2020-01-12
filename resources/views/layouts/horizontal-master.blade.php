@@ -16,13 +16,13 @@
     @yield('page-css')
 </head>
 
-<body class="text-left">
+<body  class="text-left">
     <div class='loadscreen' id="preloader">
         <div class="loader spinner-bubble spinner-bubble-primary">
         </div>
     </div>
 
-    <div class="app-admin-wrap layout-horizontal-bar clearfix">
+    <div id="app" class="app-admin-wrap layout-horizontal-bar clearfix">
         @include('includes.header-menu')
         @include('includes.horizontal-bar')
         <div class="main-content-wrap  d-flex flex-column">
@@ -42,7 +42,7 @@
     <script src="{{asset('assets/js/sidebar-horizontal.script.js')}}"></script>
     <script src="{{asset('assets/js/customizer.script.js')}}"></script>
     {{-- laravel js --}}
-    {{-- <script src="{{mix('assets/js/laravel/app.js')}}"></script> --}}
+     <script src="{{mix('assets/js/app.js')}}"></script> 
     @yield('bottom-js')
 </body>
 </html>

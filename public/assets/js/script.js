@@ -201,28 +201,6 @@ $(window).on("load", function () {
 
 /***/ }),
 
-/***/ "./resources/gull/assets/styles/sass/themes/dark-purple.scss":
-/*!*******************************************************************!*\
-  !*** ./resources/gull/assets/styles/sass/themes/dark-purple.scss ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/gull/assets/styles/sass/themes/lite-blue.scss":
-/*!*****************************************************************!*\
-  !*** ./resources/gull/assets/styles/sass/themes/lite-blue.scss ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/gull/assets/styles/sass/themes/lite-purple.scss":
 /*!*******************************************************************!*\
   !*** ./resources/gull/assets/styles/sass/themes/lite-purple.scss ***!
@@ -246,17 +224,15 @@ $(window).on("load", function () {
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/gull/assets/js/script.js ./resources/sass/app.scss ./resources/gull/assets/styles/sass/themes/lite-purple.scss ./resources/gull/assets/styles/sass/themes/lite-blue.scss ./resources/gull/assets/styles/sass/themes/dark-purple.scss ***!
-  \**************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************!*\
+  !*** multi ./resources/gull/assets/js/script.js ./resources/sass/app.scss ./resources/gull/assets/styles/sass/themes/lite-purple.scss ***!
+  \****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/patrik/code/valet/laravel-shop/resources/gull/assets/js/script.js */"./resources/gull/assets/js/script.js");
 __webpack_require__(/*! /Users/patrik/code/valet/laravel-shop/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /Users/patrik/code/valet/laravel-shop/resources/gull/assets/styles/sass/themes/lite-purple.scss */"./resources/gull/assets/styles/sass/themes/lite-purple.scss");
-__webpack_require__(/*! /Users/patrik/code/valet/laravel-shop/resources/gull/assets/styles/sass/themes/lite-blue.scss */"./resources/gull/assets/styles/sass/themes/lite-blue.scss");
-module.exports = __webpack_require__(/*! /Users/patrik/code/valet/laravel-shop/resources/gull/assets/styles/sass/themes/dark-purple.scss */"./resources/gull/assets/styles/sass/themes/dark-purple.scss");
+module.exports = __webpack_require__(/*! /Users/patrik/code/valet/laravel-shop/resources/gull/assets/styles/sass/themes/lite-purple.scss */"./resources/gull/assets/styles/sass/themes/lite-purple.scss");
 
 
 /***/ })

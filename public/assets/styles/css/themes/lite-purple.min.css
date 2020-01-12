@@ -31789,7 +31789,6 @@ span.fa.fa-chevron-right:before {
           transform: translateY(-100px);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  z-index: -1;
   border-radius: 5px;
 }
 
@@ -31843,7 +31842,6 @@ span.fa.fa-chevron-right:before {
     padding: 0;
     background-color: #fff;
     position: relative;
-    z-index: 10;
     position: fixed;
     width: 200px;
     top: 70px;

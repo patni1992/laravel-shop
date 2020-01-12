@@ -28473,7 +28473,7 @@ span.fa.fa-chevron-right:before {
           transform: translateY(-100px);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  z-index: -1;
+  z-index: 100;
   border-radius: 5px;
 }
 

@@ -18,14 +18,14 @@ mix
         "resources/gull/assets/styles/sass/themes/lite-purple.scss",
         "public/assets/styles/css/themes/lite-purple.min.css"
     )
-    .sass(
-        "resources/gull/assets/styles/sass/themes/lite-blue.scss",
-        "public/assets/styles/css/themes/lite-blue.min.css"
-    )
-    .sass(
-        "resources/gull/assets/styles/sass/themes/dark-purple.scss",
-        "public/assets/styles/css/themes/dark-purple.min.css"
-    );
+    // .sass(
+    //     "resources/gull/assets/styles/sass/themes/lite-blue.scss",
+    //     "public/assets/styles/css/themes/lite-blue.min.css"
+    // )
+    // .sass(
+    //     "resources/gull/assets/styles/sass/themes/dark-purple.scss",
+    //     "public/assets/styles/css/themes/dark-purple.min.css"
+    // );
 
 mix.combine(
     [
@@ -38,3 +38,4 @@ mix.combine(
 );
 
 mix.js(["resources/gull/assets/js/script.js"], "public/assets/js/script.js");
+mix.js(["resources/laravel/js/app.js"], "public/assets/js/app.js");
