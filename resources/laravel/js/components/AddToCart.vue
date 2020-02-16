@@ -6,9 +6,15 @@
 
 <script>
 export default {
+    props: {
+        id: String
+    },
     methods: {
-        addToCart() {
-            console.log("adding to cart");
+        async addToCart() {
+            const response = await fetch(`/addProduct/${this.id}`, {
+                method: "post"
+            });
+            const data = await response.json();
         }
     },
     mounted() {

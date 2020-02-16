@@ -26,7 +26,7 @@
                             <!-- $32.00 <del class="text-secondary">$54.00</del> -->
                             {{$product->price}}
                         </p>
-                        <add-to-cart />
+                        <add-to-cart id="{{ json_encode($product->id) }}"/>
                         <!-- <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
                             <span class="badge badge-info">20% off</span>
                         </p> -->
