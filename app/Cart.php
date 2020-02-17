@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Product;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Session;
 
 class Cart
@@ -70,8 +71,31 @@ class Cart
 
         Session::put('cart', $this->data);
     }
+    
 
-    public function all() {
+    public function all($withProductDetails = false) {
+        if($withProductDetails) {
+            $products = Product::find(array_keys($this->data['items']))->map(function ($item) {
+                return Arr::only($item->toArray(), ['id', 'name', 'price', 'description', 'weight']);
+            });
+
+            $newItems = [];
+
+            foreach($products as $value){
+                $id = $value['id'];
+                $newItems[$id] = $value;
+                $newItems[$id]['quantity'] = $this->data['items'][$id]['quantity'];
+                $newItems[$id]['totalPrice'] = $this->data['items'][$id]['price'];
+              }
+
+              return [
+                  'totalPrice' => $this->data['totalPrice'],
+                  'totalItems' => $this->data['totalItems'],
+                  'items' => $newItems
+              ];
+           
+        }
+
         return $this->data;
     }
 }
