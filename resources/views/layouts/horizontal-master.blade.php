@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,11 +17,11 @@
     @yield('page-css')
 </head>
 
-<body  class="text-left">
-    <div class='loadscreen' id="preloader">
+<body class="text-left">
+    <!-- <div class='loadscreen' id="preloader">
         <div class="loader spinner-bubble spinner-bubble-primary">
         </div>
-    </div>
+    </div> -->
 
     <div id="app" class="app-admin-wrap layout-horizontal-bar clearfix">
         @include('includes.header-menu')
@@ -42,7 +43,11 @@
     <script src="{{asset('assets/js/sidebar-horizontal.script.js')}}"></script>
     <script src="{{asset('assets/js/customizer.script.js')}}"></script>
     {{-- laravel js --}}
-     <script src="{{mix('assets/js/app.js')}}"></script> 
+    <script>
+       const shoppingCart = @json($cart);
+    </script>
+    <script src="{{mix('assets/js/app.js')}}"></script>
     @yield('bottom-js')
 </body>
+
 </html>
