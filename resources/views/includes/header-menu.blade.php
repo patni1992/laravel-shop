@@ -1,6 +1,10 @@
 <div class="main-header">
     <div class="mx-4">
-        <h1>Laravel Shop</h1>
+        <a href="/">
+            <h1>
+                Laravel Shop
+            </h1>
+        </a>
     </div>
 
     <div class="menu-toggle">
@@ -37,7 +41,7 @@
             </div>
         </div> -->
        
-        <cart-icon :count=0 />
+        <cart-icon  />
 
        
         <!-- <div class="dropdown">
