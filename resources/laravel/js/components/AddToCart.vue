@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {store} from '../store'
 export default {
     props: {
         id: String
@@ -15,6 +16,7 @@ export default {
                 method: "post"
             });
             const data = await response.json();
+            store.addCart(data);
         }
     },
     mounted() {
