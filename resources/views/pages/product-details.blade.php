@@ -25,49 +25,29 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="ul-product-detail__image">
-                                <img src="{{ asset('assets/images/mac_book.jpg') }}" alt="">
+                                <img src="{{ asset($product->featured_image) }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="ul-product-detail__brand-name mb-4">
-                                <h5 class="heading">MAC Book Pro</h5>
-                                <span class="text-mute">Modern model 2019</span>
+                                <h5 class="heading"> {{$product->name}} </h5>
+                                <!-- <span class="text-mute">Modern model 2019</span> -->
                             </div>
 
                             <div class="ul-product-detail__price-and-rating d-flex align-items-baseline">
-                                <h3 class="font-weight-700 text-primary mb-0 mr-2">$2,300</h3>
-                                <span class="text-mute font-weight-800 mr-2"><del>$1,150</del></span>
-                                <small class="text-success font-weight-700">50% off</small>
+                                <h3 class="font-weight-700 text-primary mb-0 mr-2">${{$product->price}}</h3>
+                                <!-- <span class="text-mute font-weight-800 mr-2"><del>$1,150</del></span>
+                                <small class="text-success font-weight-700">50% off</small> -->
                             </div>
-
+                            <div class="py-4">
+                                {{$product->description}}
+                            </div>
                             <!-- <div class="ul-product-detail__rating">
                                 <ul>
                                     <li></li>
                                 </ul>
                             </div> -->
-                            <div class="ul-product-detail__features mt-3">
-                                <h6 class=" font-weight-700">Features:</h6>
-                                <ul class="m-0 p-0">
-                                    <li>
-                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
-                                        <span class="align-middle">This Refurbished product is tested to work and look
-                                            like new with minimal to no signs of wear & tear</span>
-                                    </li>
-                                    <li>
-                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
-                                        <span class="align-middle">2.6GHz Intel Core i5 4th Gen processor</span>
-                                    </li>
-                                    <li>
-                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
-                                        <span class="align-middle">8GB DDR3 RAM</span>
-                                    </li>
-                                    <li>
-                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
-                                        <span class="align-middle">13.3-inch screen, Intel Iris 5100 1.5GB
-                                            Graphics</span>
-                                    </li>
-                                </ul>
-                            </div>
+
 
                             <div class="ul-product-detail__quantity d-flex align-items-center mt-3">
                                 <input type="number" class="form-control col-2">
@@ -153,23 +133,61 @@
                 <div class="card-body">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab"
-                                href="#nav-home" role="tab" aria-controls="nav-home"
-                                aria-selected="true">Description</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
-                                role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
-                                role="tab" aria-controls="nav-contact" aria-selected="false">Customize Tab</a>
-                            <a class="nav-item nav-link" id="nav-brand-tab" data-toggle="tab" href="#nav-brand"
-                                role="tab" aria-controls="nav-contact" aria-selected="false">About Brand</a>
+                            <a class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Features</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
+                            <!-- <a class="nav-item nav-link" id="nav-brand-tab" data-toggle="tab" href="#nav-brand"
+                                role="tab" aria-controls="nav-contact" aria-selected="false">About Brand</a> -->
                         </div>
                     </nav>
                     <div class="tab-content ul-tab__content p-5" id="nav-tabContent">
-                        <div class="tab-pane fade active show" id="nav-home" role="tabpanel"
-                            aria-labelledby="nav-home-tab">
-                            <div class="row">
+                        <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="ul-product-detail__features">
+                                <!-- <h6 class=" font-weight-700">Features:</h6> -->
+                                <ul class="m-0 p-0">
+                                    @php
+                                    $i = 1;
+                                    @endphp
+                                    @foreach ($product->attributes as $attribute)
+                                    @php
+                                    $i = 1 - $i;
+                                    @endphp
+                                    @if($i==0)
+                                    <li class="py-2" style="background-color: #F9F9F9;">
+                                        <span class=" font-weight-bold mx-2">{{$attribute->attribute->name}}</span>
+                                        <span class="ml-2">{{$attribute->attributeValue->value}}</span>
+
+                                    </li>
+                                    @else
+                                    <li class="py-2">
+                                        <span class="align-middle font-weight-bold mx-2">{{$attribute->attribute->name}}</span>
+                                        <span class="ml-2 align-middle">{{$attribute->attributeValue->value}}</span>
+
+                                    </li>
+                                    @endif
+                                    @endforeach
+                                    <!-- <li>
+                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
+                                        <span class="align-middle">This Refurbished product is tested to work and look
+                                            like new with minimal to no signs of wear & tear</span>
+                                    </li>
+                                    <li>
+                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
+                                        <span class="align-middle">2.6GHz Intel Core i5 4th Gen processor</span>
+                                    </li>
+                                    <li>
+                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
+                                        <span class="align-middle">8GB DDR3 RAM</span>
+                                    </li>
+                                    <li>
+                                        <i class="i-Right1 text-primary text-15 align-middle font-weight-700"> </i>
+                                        <span class="align-middle">13.3-inch screen, Intel Iris 5100 1.5GB
+                                            Graphics</span>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <!-- <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <img src="{{ asset('assets/images/mac_book.jpg') }}" alt="">
+                                    <img src="{{ asset($product->featured_image) }}" alt="">
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-12">
                                     <h5 class="text-uppercase font-weight-700 text-muted mt-4 mb-2"> Lorem Ipsum is
@@ -233,7 +251,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="row">
@@ -270,54 +288,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                            <div class="ul-product-detail__nested-card mt-2">
-                                <div class="row text-center">
-                                    <div class="col-lg-4 col-sm-12 mb-2">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="ul-product-detail__border-box">
-                                                    <div class="ul-product-detail--icon mb-2">
-                                                        <i class="i-Car text-success text-25 font-weight-500 "></i>
-                                                    </div>
-                                                    <h5 class="heading">Quick Delivery</h5>
-                                                    <p class="text-muted text-12">Lorem Ipsum is simply dummy text of
-                                                        the printing and typesetting industry.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-12 mb-2">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="ul-product-detail__border-box">
-                                                    <div class="ul-product-detail--icon mb-2">
-                                                        <i class="i-Car text-primary text-25 font-weight-500 "></i>
-                                                    </div>
-                                                    <h5 class="heading">Quick Delivery</h5>
-                                                    <p class="text-muted text-12">Lorem Ipsum is simply dummy text of
-                                                        the printing and typesetting industry.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-12 mb-2">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="ul-product-detail__border-box">
-                                                    <div class="ul-product-detail--icon mb-2">
-                                                        <i class="i-Car text-danger text-25 font-weight-500 "></i>
-                                                    </div>
-                                                    <h5 class="heading">Quick Delivery</h5>
-                                                    <p class="text-muted text-12">Lorem Ipsum is simply dummy text of
-                                                        the printing and typesetting industry.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="tab-pane fade" id="nav-brand" role="tabpanel" aria-labelledby="nav-contact-tab">
                             <div class="row">
                                 <div class="col-lg-2">
@@ -333,7 +303,6 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="ul-product-detail__features mt-3">
-
                                         <ul class="m-0 p-0">
                                             <li>
                                                 <i class="i-Right1 text-primary text-15 align-middle font-weight-700">
