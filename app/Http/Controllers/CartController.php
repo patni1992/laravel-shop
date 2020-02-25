@@ -11,6 +11,17 @@ class CartController extends Controller
     {
         $cart = new Cart();
         $cart->add($product);
-        return response()->json(['message' => 'ok'], 200);
+        return $cart->all();
+    }
+
+    public function getCart(Product $product)
+    {
+        $cart = new Cart();
+        return $cart->all();
+    }
+
+    public function index(Product $product)
+    {
+        return view('pages.cart');
     }
 }
