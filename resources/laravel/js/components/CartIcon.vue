@@ -1,28 +1,31 @@
-
 <template>
-        <div class="dropdown mx-4">
-            <div class="badge-top-container" role="button" id="dropdownNotification" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span class="badge badge-primary">{{count}}</span>
-                <i class="i-Add-Cart text-muted header-icon"></i>
-            </div>
-        </div> 
-
+    <a class=" mx-4" href="/cart">
+  
+        <div
+            class="badge-top-container"
+            role="button"
+            id="dropdownNotification"
+           
+        >
+            <span class="badge badge-primary">{{ cart.totalItems }}</span>
+            <i class="i-Add-Cart text-muted header-icon"></i>
+        </div>
+   
+    </a>
 </template>
 
 <script>
+import { store } from "../store";
 export default {
-    props: {
-        count: Number
+    computed: {
+        cart() {
+            return store.$data.cart;
+        }
     },
     methods: {
         addToCart() {
             console.log("adding to cart");
         }
-    },
-    mounted() {
-        console.log("Component mounted. yaaay");
     }
 };
 </script>
-
