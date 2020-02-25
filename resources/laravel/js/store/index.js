@@ -1,14 +1,15 @@
-
-import Vue from "vue"
-import Vuex from "vuex"
-import axios from "axios"
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-    state: {},
-    
-    actions: {},
-
-    mutations: {}
-})
+import Vue from "vue";
+export const store = new Vue({
+    data() {
+        return {
+            cart: null
+        };
+    },
+    computed: {},
+    methods: {
+        addCart(cart) {
+            this.cart = cart;
+        },
+        removeFromCart(sku) {}
+    }
+});
