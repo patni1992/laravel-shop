@@ -13,8 +13,9 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $data = [
-            'Clothing' => ['Woman Shoes', 'Men\'s Shirts'],
-            'Handy' => ['Smartphones', 'Smartwatches ']
+            'Computer' => ['Desktop', 'Laptop'],
+            'Mobile' => ['Phone', 'Smartwatch'],
+            'Gaming' => ['Xbox One', 'PS4', 'Nintendo Switch']
         ];
         
         foreach ($data as $category => $subCategories)
